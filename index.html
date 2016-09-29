@@ -3,15 +3,23 @@
         <title></title>
     </head>
     <body>
-      <form>
-          <input type="text" name="tittle" value="">
-          <input type="text" name="verse" value="">
+        <div id="verses">
+            <input type="text" name="title" value="" v-model="title">
+          <input type="text" name="verse" value="" v-model="verse">
           <br/>
           <br/>
-          <textarea rows="5" cols="8"></textarea>
+          <textarea rows="5" cols="8" name="reading" v-model="reading"></textarea>
           <br/>
-          
-          <button type="">Add</button>
-      </form>  
+          <button type="" @click="add">Add</button>
+
+          <ul v-for="v in versesList">
+                <li><h3>{{v.title}}</h3></li>
+                <li>{{v.verse}}</li>
+                <li>{{v.reading}}</li>                
+            </ul>
+        </div>
+    
+        <script src="lib/vue-v1.0.26..js"></script>        
+        <script src="js/verses.js"></script>
     </body>
 </html>
